@@ -1,0 +1,36 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="AppTheme" parent="@android:Theme.Material.Light">
+        <!-- Не отображать тулбар -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- Картинка сплеш скрина, которая будет отображаться при холодном старте приложения. До 
+             непосредственно отображения первой формы. -->
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+        <!-- Делаем системный статус бар прозрачным, чтобы при загрузке статус бар накладывался 
+             на сплеш скрин с эффектом прозрачности -->
+        <item name="android:windowTranslucentStatus">true</item>
+
+        <!-- По умолчанию Андроид не использует барабаны для выбора даты и времени. 
+             Однако, у нас есть компоненты TfgDatePicker/TfgTimePicker, которые должны работать, 
+             как барабаны. -->
+        <item name="android:datePickerStyle">@style/SpinnerDatePicker</item>
+        <item name="android:timePickerStyle">@style/SpinnerTimePicker</item>
+    </style>
+
+    <!-- Стиль компонента выбора даты в виде барабанов -->
+    <style name="SpinnerDatePicker" parent="android:Widget.Material.DatePicker">
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+
+    <!-- Стиль компонента выбора времени в виде барабанов -->
+    <style name="SpinnerTimePicker" parent="android:Widget.Material.TimePicker">
+        <item name="android:timePickerMode">spinner</item>
+    </style>
+    
+    <!-- Стиль TfgCollectionView, который необходим, чтобы у нативного представления появилась 
+         возможность отображать полосы прокрутки. Даже не смотря на то, что в конечном итоге 
+         полоса прокрутки может быть только одна, надо обязательно указывать здесь два типа. -->
+    <style name="CollectionView" parent="android:Widget">
+        <item name="android:scrollbars">vertical|horizontal</item>
+    </style>
+</resources>

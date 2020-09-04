@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="%package%"
+          android:versionCode="%versionCode%"
+          android:versionName="%versionName%"
+          android:installLocation="%installLocation%">
+
+    <uses-sdk android:minSdkVersion="<%fgx-min-sdk-version%>" android:targetSdkVersion="<%fgx-target-sdk-version%>" />
+
+<%fgx-permissions%>
+<%fgx-uses-features%>
+
+    <application android:persistent="%persistent%"
+        android:restoreAnyVersion="%restoreAnyVersion%"
+        android:label="%label%"
+        android:debuggable="%debuggable%"
+        android:largeHeap="%largeHeap%"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        android:hardwareAccelerated="%hardwareAccelerated%">
+
+<%fgx-meta-data%>
+<%fgx-uses-libraries%>
+<%fgx-providers%>
+<%fgx-services%>
+<%fgx-receivers%>
+<%fgx-activities%>
+
+        <activity android:name="com.embarcadero.firemonkey.FMXNativeActivity"
+                  android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+                  android:windowSoftInputMode="adjustNothing"
+                  android:launchMode="singleInstance">
+            <meta-data android:name="android.app.lib_name" android:value="%libNameValue%" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

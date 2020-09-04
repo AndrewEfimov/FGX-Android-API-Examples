@@ -1,0 +1,57 @@
+object FormMain: TFormMain
+  Toolbar = fgNavigationBar1
+  Size.Width = 360.000000000000000000
+  Size.Height = 590.000000000000000000
+  SavedSizeWidth = 360s
+  SavedSizeHeight = 590s
+  object fgNavigationBar1: TfgNavigationBar
+    ActionButtons = <>
+    Title = 'ConnectionChecker'
+    Alignment.AlignSelf = Stretch
+    RelativePosition.Left = 0.000000000000000000
+    RelativePosition.Top = 0.000000000000000000
+    Size.Width = 360.000000000000000000
+    Size.Height = 80.000000000000000000
+    SavedSizeWidth = 250s
+    SavedSizeHeight = 80s
+  end
+  object fgLayout1: TfgLayout
+    AlignmentChildren.Direction = Column
+    Padding.Left = 8.000000000000000000
+    Padding.Top = 8.000000000000000000
+    Padding.Right = 8.000000000000000000
+    Padding.Bottom = 8.000000000000000000
+    Alignment.FlexGrow = 1.000000000000000000
+    PositionMode = Relative
+    Position.Y = 80.000000000000000000
+    RelativePosition.Left = 152.000000000000000000
+    RelativePosition.Top = 272.000000000000000000
+    Size.Width = 360.000000000000000000
+    Size.Height = 510.000000000000000000
+    SavedSizeWidth = 50s
+    SavedSizeHeight = 50s
+    object fgMemo1: TfgMemo
+      PositionMode = Relative
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      RelativePosition.Left = 0.000000000000000000
+      RelativePosition.Top = 88.000000000000000000
+      Size.Width = 344.000000000000000000
+      Size.Height = 273.000000000000000000
+      SavedSizeWidth = 97s
+      SavedSizeHeight = 273s
+    end
+    object fgButton1: TfgButton
+      Text = 'Test'
+      Position.X = 8.000000000000000000
+      Position.Y = 288.000000000000000000
+      RelativePosition.Left = 8.000000000000000000
+      RelativePosition.Top = 288.000000000000000000
+      Size.Width = 120.000000000000000000
+      Size.Height = 40.000000000000000000
+      OnTap = fgButton1Tap
+      SavedSizeWidth = 120s
+      SavedSizeHeight = 40s
+    end
+  end
+end
