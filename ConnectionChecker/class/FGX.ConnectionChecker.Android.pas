@@ -134,7 +134,7 @@ begin
 
       NetworkInfo := GetNetworkInfo;
       if TypeTransport <> -1 then
-        Result := (NetworkInfo <> nil) and NetworkInfo.getType() = TypeTransport;
+        Result := (NetworkInfo <> nil) and (NetworkInfo.getType() = TypeTransport);
     end;
 end;
 
