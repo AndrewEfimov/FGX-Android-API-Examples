@@ -5,7 +5,7 @@ interface
 {$SCOPEDENUMS ON}
 
 uses
-  System.Types, System.Classes, FGX.Forms, FGX.Forms.Types, FGX.Controls, FGX.Controls.Types, FGX.Layout, 
+  System.Types, System.Classes, FGX.Forms, FGX.Forms.Types, FGX.Controls, FGX.Controls.Types, FGX.Layout,
   FGX.Layout.Types, FGX.NavigationBar.Types, FGX.Button.Types, FGX.Button, FGX.Memo, FGX.NavigationBar;
 
 type
@@ -14,6 +14,7 @@ type
     fgMemo1: TfgMemo;
     fgButton1: TfgButton;
     fgLayout1: TfgLayout;
+    fgLayout2: TfgLayout;
     procedure fgButton1Tap(Sender: TObject);
   private
     { Private declarations }
@@ -35,11 +36,18 @@ procedure TFormMain.fgButton1Tap(Sender: TObject);
 begin
   fgMemo1.Lines.Clear;
   fgMemo1.Lines.Add('CheckPermission: ' + BoolToStr(TConnectionChecker.CheckPermission, True));
-  fgMemo1.Lines.Add('IsConnected: ' + BoolToStr(TConnectionChecker.IsConnected, True));
-  fgMemo1.Lines.Add('IsWifi: ' + BoolToStr(TConnectionChecker.HasConnection(TConnectionType.Wifi), True));
-  fgMemo1.Lines.Add('IsMobile: ' + BoolToStr(TConnectionChecker.HasConnection(TConnectionType.Mobile), True));
-  fgMemo1.Lines.Add('IsEthernet: ' + BoolToStr(TConnectionChecker.HasConnection(TConnectionType.Ethernet), True));
-  fgMemo1.Lines.Add('HasInternet: ' + BoolToStr(TConnectionChecker.HasInternet, True));
+  if TConnectionChecker.CheckPermission then
+  begin
+    fgMemo1.Lines.Add('IsConnected: ' + BoolToStr(TConnectionChecker.IsConnected, True));
+    fgMemo1.Lines.Add('IsEthernet: ' + BoolToStr(TConnectionChecker.HasActiveNetworkConnection
+      (TConnectionType.Ethernet), True));
+    fgMemo1.Lines.Add('IsMobile: ' + BoolToStr(TConnectionChecker.HasActiveNetworkConnection
+      (TConnectionType.Mobile), True));
+    fgMemo1.Lines.Add('IsWifi: ' + BoolToStr(TConnectionChecker.HasActiveNetworkConnection
+      (TConnectionType.Wifi), True));
+    fgMemo1.Lines.Add('IsVPN: ' + BoolToStr(TConnectionChecker.HasActiveNetworkConnection(TConnectionType.VPN), True));
+    fgMemo1.Lines.Add('HasInternet: ' + BoolToStr(TConnectionChecker.HasInternet, True));
+  end;
 end;
 
 end.

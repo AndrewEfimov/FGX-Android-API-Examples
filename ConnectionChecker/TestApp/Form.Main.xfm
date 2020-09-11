@@ -31,27 +31,40 @@ object FormMain: TFormMain
     SavedSizeWidth = 50s
     SavedSizeHeight = 50s
     object fgMemo1: TfgMemo
+      Alignment.FlexGrow = 1.000000000000000000
       PositionMode = Relative
       Position.X = 8.000000000000000000
       Position.Y = 8.000000000000000000
       RelativePosition.Left = 0.000000000000000000
       RelativePosition.Top = 88.000000000000000000
       Size.Width = 344.000000000000000000
-      Size.Height = 273.000000000000000000
+      Size.Height = 444.000000000000000000
       SavedSizeWidth = 97s
       SavedSizeHeight = 273s
     end
-    object fgButton1: TfgButton
-      Text = 'Test'
+    object fgLayout2: TfgLayout
+      AlignmentChildren.JustifyContent = Center
+      PositionMode = Relative
       Position.X = 8.000000000000000000
-      Position.Y = 288.000000000000000000
-      RelativePosition.Left = 8.000000000000000000
-      RelativePosition.Top = 288.000000000000000000
-      Size.Width = 120.000000000000000000
-      Size.Height = 40.000000000000000000
-      OnTap = fgButton1Tap
-      SavedSizeWidth = 120s
-      SavedSizeHeight = 40s
+      Position.Y = 452.000000000000000000
+      RelativePosition.Left = 152.000000000000000000
+      RelativePosition.Top = 232.000000000000000000
+      Size.Width = 344.000000000000000000
+      Size.Height = 50.000000000000000000
+      SavedSizeWidth = 50s
+      SavedSizeHeight = 50s
+      object fgButton1: TfgButton
+        Text = 'Test'
+        PositionMode = Relative
+        Position.X = 112.000000000000000000
+        RelativePosition.Left = 0.000000000000000000
+        RelativePosition.Top = 0.000000000000000000
+        Size.Width = 120.000000000000000000
+        Size.Height = 50.000000000000000000
+        OnTap = fgButton1Tap
+        SavedSizeWidth = 120s
+        SavedSizeHeight = 40s
+      end
     end
   end
 end
